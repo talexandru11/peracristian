@@ -118,3 +118,13 @@ contactForm.addEventListener("submit", (event) => {
   contactForm.reset();
   modalOverlay.style.display = "none";
 });
+
+// Disable autocomplete
+
+function openModal() {
+  contactForm.reset();
+  modalOverlay.style.display = "flex";
+}
+
+ctaButton.addEventListener("click", openModal);
+contactCta.addEventListener("click", openModal);

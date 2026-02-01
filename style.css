@@ -28,6 +28,10 @@ body {
     background-attachment: fixed;
     color: #f1ce70;
     font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+    -webkit-user-select: none; /* Chrome, Safari */
+    -ms-user-select: none;     /* Edge */
+    user-select: none;         /* Standard */
 }
 
 .page-wrapper{
