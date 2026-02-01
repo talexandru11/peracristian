@@ -19,7 +19,7 @@
             <h2>Baroul București</h2>
             <p class="hero-tagline">Consultanță juridică. Asistență. Reprezentare în instanță.</p>
                 <div class="cta">
-                    <button class="hero-cta">Programează o consultație</button>
+                    <button class="ctaBtn" id="ctaButton">Programează o consultație</button>
                 </div>
         </div>
 
@@ -166,7 +166,7 @@ Splaiul Unirii nr.35, Sector 3, București</li>
     </div>
 
     <div class="contact-action">
-        <button class="contact-cta">Programează o consultație</button>
+        <button class="contact-cta" id="contactCta">Programează o consultație</button>
     </div>
 
     </div>
@@ -191,5 +191,26 @@ Splaiul Unirii nr.35, Sector 3, București</li>
     </div>
 </div>
 
+<div id="modalOverlay" class="modal-overlay">
+  <div class="modal">
+    <h2 class="formHeader">Programare consultație</h2>
+
+    <form id="contactForm">
+        <input type="text" placeholder="Nume" required autocomplete="new-password"/>
+        <input type="text" placeholder="Prenume" required autocomplete="new-password"/>
+        <input type="email" placeholder="Email" required autocomplete="new-password"/>
+        <input type="tel" placeholder="Numar de telefon" required autocomplete="new-password"/>
+        <textarea placeholder="Cu ce va pot ajuta?" required></textarea>
+
+        <div class="modal-actions">
+            <button type="submit" id="sendBtn">Trimite</button>
+            <button type="button" id="cancelBtn">Renunță</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
 </body>
 </html>
