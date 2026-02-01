@@ -1,0 +1,238 @@
+body {
+    background-color:#042134;
+    margin: 0;
+    color: #E8DDC8;
+    font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+}
+
+.page-wrapper{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.hero{
+    text-align: center;
+    padding: 80px 20px 100px;
+    background-color: #042134;
+    color: #e6eef5;
+}
+
+.hero .logo {
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #c9d6e2;
+  margin-bottom: 24px;
+}
+
+.hero-tagline {
+    text-align: center;
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  color: #dce7f1;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-cta {
+    background-color: transparent;
+    color: #f1ce70;
+    border: 3px solid #f1cf70d2;
+    position: relative;
+    height: 50px;
+    width: 250px;
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 0; /* important */
+    transition: color 0.2s ease, transform 0.08s ease;
+}
+
+.hero-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0;
+    background-color: #f1ce70;
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.hero-cta:hover::after {
+  width: 100%;
+}
+
+.hero-cta:hover {
+  color: #042134;
+}
+
+.hero-cta:active {
+  /* transform: translateY(2px);
+  box-shadow: inset 0 2px 6px rgba(4, 33, 52, 0.35); */
+  border-width: 2px;
+
+}
+
+.section{
+    margin-bottom: 50px;
+    line-height: 1.7;
+    margin-bottom: 26px;
+}
+    .section h3, .section ul{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+.section h2, .section h3{
+    display: flex;
+    justify-content: left;
+    padding-top: 20px;
+}
+
+.section ul {
+    list-style:none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+
+p {
+    color: #d6dee4;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-item{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 8px;
+}
+
+.contact-cta {
+  background: transparent;
+  color: #f1ce70;
+  border: 1.5px solid rgba(241, 206, 112, 0.6);
+  height: 30px;
+  margin-top: 10px;
+  padding-top: 0 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-cta:hover {
+  background-color: rgba(241, 206, 112, 0.12);
+  border-color: #f1ce70;
+  color: #f1ce70;
+}
+
+.contact-cta:active {
+  transform: scale(0.97);
+  background-color: rgba(241, 206, 112, 0.18);
+}
+
+.site-footer{
+    margin-top: 48px;
+    padding: 20px 0;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+.footer-title{
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.footer-title::after{
+    content: "";
+    display: block;
+    width: 250px;
+    height: 1px;
+    margin-top: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.site-footer p {
+    max-width: none;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    color: #aebbc4;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+}
+
+        @media (max-width: 600px) {
+            .footer-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+.footer-item {
+    margin-bottom: 6px;
+}
+
+.site-footer a {
+    color: #d6dee4;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.15s ease, transform 0.15s ease;
+
+}
+
+.site-footer a:hover {
+    color: #f1ce70;
+    transform: translate(4px);
+}
+
+.footer-legal {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #8fa0ad;
+}
+
+.contact-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.contact-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
