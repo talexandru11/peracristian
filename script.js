@@ -74,49 +74,26 @@ contactForm.addEventListener("input", (e) => {
 });
 
 // ===== SUBMIT VALIDATION =====
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  let hasErrors = false;
-  const fields = contactForm.querySelectorAll(".field");
+    const formData = new FormData(contactForm);
 
-  // 1. empty field validation (ALL fields)
-  fields.forEach(field => {
-    const input = field.querySelector("input, textarea");
-    const error = field.querySelector(".field-error");
+    const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            Accept: "application/json"
+        }
+    });
 
-    if (input.value.trim() === "") {
-      field.classList.add("invalid");
-      error.style.display = "block";
-      hasErrors = true;
+    if (response.ok) {
+        alert("Mesaj trimis cu succes!");
+        contactForm.reset();
+        modalOverlay.style.display = "none";
+    } else {
+        alert("Eroare la trimiterea formularului.");
     }
-  });
-
-  if (hasErrors) return;
-
-  // 2. email format validation (ONLY after non-empty)
-  const email = emailInput.value.trim();
-
-  if (!emailRegex.test(email)) {
-    emailField.classList.add("invalid");
-    emailError.textContent = "Email invalid";
-    emailError.style.display = "block";
-    return;
-  }
-
-  // 3. success
-  const data = {
-    nume: contactForm.elements["nume"].value.trim(),
-    prenume: contactForm.elements["prenume"].value.trim(),
-    email: email,
-    telefon: contactForm.elements["telefon"].value.trim(),
-    mesaj: contactForm.elements["mesaj"].value.trim()
-  };
-
-  console.log(data);
-
-  contactForm.reset();
-  modalOverlay.style.display = "none";
 });
 
 // Disable autocomplete
