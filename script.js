@@ -79,20 +79,25 @@ contactForm.addEventListener("submit", async function (e) {
 
     const formData = new FormData(contactForm);
 
-    const response = await fetch(contactForm.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-            Accept: "application/json"
-        }
-    });
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json"
+            }
+        });
 
-    if (response.ok) {
-        alert("Mesaj trimis cu succes!");
-        contactForm.reset();
-        modalOverlay.style.display = "none";
-    } else {
-        alert("Eroare la trimiterea formularului.");
+        if (response.ok) {
+            alert("Mesaj trimis cu succes!");
+            contactForm.reset();
+            modalOverlay.classList.remove("show");
+        } else {
+            alert("Eroare la trimiterea formularului.");
+        }
+    } catch (error) {
+        console.error(error);
+        alert("Nu s-a putut trimite formularul.");
     }
 });
 
